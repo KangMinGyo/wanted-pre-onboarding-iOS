@@ -23,7 +23,7 @@ class WeatherTableViewCell: UITableViewCell {
     
     lazy var tempLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 40)
+        label.font = UIFont.systemFont(ofSize: 30)
         return label
     }()
     
@@ -49,7 +49,7 @@ class WeatherTableViewCell: UITableViewCell {
     
     func configure() {
         cityNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        cityNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
+        cityNameLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         cityNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         
 //        weatherIcon.translatesAutoresizingMaskIntoConstraints = false
@@ -57,13 +57,13 @@ class WeatherTableViewCell: UITableViewCell {
 //        weatherIcon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
 //        weatherIcon.heightAnchor.constraint(equalToConstant: 50).isActive = true
 //        weatherIcon.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        
+//
         tempLabel.translatesAutoresizingMaskIntoConstraints = false
-        tempLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
-        tempLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 350).isActive = true
-        
-        humLabel.translatesAutoresizingMaskIntoConstraints = false
-        humLabel.topAnchor.constraint(equalTo: tempLabel.bottomAnchor, constant: -20).isActive = true
-        humLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
+        tempLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        tempLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
+//
+//        humLabel.translatesAutoresizingMaskIntoConstraints = false
+//        humLabel.topAnchor.constraint(equalTo: tempLabel.bottomAnchor, constant: -20).isActive = true
+//        humLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
     }
 }

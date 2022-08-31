@@ -10,12 +10,14 @@ import UIKit
 class WeatherViewController: UIViewController {
     
     let cityNameArr = ["gongju", "Gwangju", "Gumi", "Gunsan", "Daegu", "Daejeon", "Mokpo", "Busan", "Seosan", "Seoul", "Sokcho", "Suwon", "Suncheon", "Ulsan", "Iksan", "Jeonju", "Jeju", "Cheonan", "Cheongju", "Chuncheon"]
+    let cityNameArr_Kr = ["공주", "광주", "구미", "군산", "대구", "대전", "목포", "부산", "서산", "서울", "속초", "수원", "순천", "울산", "익산", "전주", "제주", "천안", "청주", "춘천"]
     
     var weatherData: [Weather] = []
 //    var weather: weather?
-    var main: Main?
+    var main: [Main] = []
 //    var wind: Wind?
     var name: [String] = []
+    var temp: [Float] = []
 
     private let weatherTableView: UITableView = {
         let tableView = UITableView()
@@ -33,13 +35,13 @@ class WeatherViewController: UIViewController {
     }
     
     func fetchData() {
-        for i in 0..<cityNameArr.count {
-            WeatherService().getWeather(cityName: cityNameArr[i]) { result in
+        for index in 0..<cityNameArr.count {
+            WeatherService().getWeather(cityName: cityNameArr[index]) { result in
                         switch result {
                         case .success(let weatherResponse):
                             DispatchQueue.main.async {
-                                self.name.append(weatherResponse.name ?? "")
-                                print(self.name.count)
+                                self.name.append(self.cityNameArr_Kr[index])
+                                self.temp.append(weatherResponse.main.temp)
                                 self.weatherTableView.reloadData()
 //                                self.weather = weatherResponse.weather.first
 //                                self.main = weatherResponse.main
@@ -56,7 +58,7 @@ class WeatherViewController: UIViewController {
     func configure() {
         view.addSubview(weatherTableView)
         setTableViewDelegate()
-        weatherTableView.rowHeight = 150
+        weatherTableView.rowHeight = 100
         weatherTableView.register(WeatherTableViewCell.self, forCellReuseIdentifier: "cell")
         weatherTableView.pin(to: view)
     }
@@ -75,8 +77,9 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! WeatherTableViewCell
+        let temperature = temp[indexPath.row]
         cell.cityNameLabel.text = name[indexPath.row]
-//        cell.tempLabel.text = main?.temp[indexPath.row]
+        cell.tempLabel.text = "\(Int(UnitTemperature.celsius.converter.value(fromBaseUnitValue: Double(temperature))))°C"
         return cell
     }
     
