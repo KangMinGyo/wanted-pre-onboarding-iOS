@@ -11,6 +11,7 @@ struct Weather: Codable {
     var weather: [weather]
     var main: Main
     var wind: Wind
+    var name: String
 }
 
 struct weather: Codable {

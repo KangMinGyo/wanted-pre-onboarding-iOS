@@ -9,18 +9,6 @@ import UIKit
 
 class WeatherTableViewCell: UITableViewCell {
     
-    var item: String? {
-        didSet {
-            self.cityNameLabel.text = item
-        }
-    }
-    
-    var temp: String? {
-        didSet {
-            self.tempLabel.text = temp
-        }
-    }
-    
     //도시이름, 날씨 아이콘, 현재기온, 현재습도
     lazy var cityNameLabel: UILabel = {
         let label = UILabel()
