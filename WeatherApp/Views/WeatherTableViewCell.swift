@@ -52,18 +52,18 @@ class WeatherTableViewCell: UITableViewCell {
         cityNameLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         cityNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         
-//        weatherIcon.translatesAutoresizingMaskIntoConstraints = false
-//        weatherIcon.topAnchor.constraint(equalTo: cityNameLabel.bottomAnchor, constant: -20).isActive = true
-//        weatherIcon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
-//        weatherIcon.heightAnchor.constraint(equalToConstant: 50).isActive = true
-//        weatherIcon.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        weatherIcon.translatesAutoresizingMaskIntoConstraints = false
+        weatherIcon.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        weatherIcon.leadingAnchor.constraint(equalTo: cityNameLabel.trailingAnchor, constant: 20).isActive = true
+        weatherIcon.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        weatherIcon.widthAnchor.constraint(equalToConstant: 60).isActive = true
 //
         tempLabel.translatesAutoresizingMaskIntoConstraints = false
         tempLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         tempLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
 //
-//        humLabel.translatesAutoresizingMaskIntoConstraints = false
-//        humLabel.topAnchor.constraint(equalTo: tempLabel.bottomAnchor, constant: -20).isActive = true
-//        humLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
+        humLabel.translatesAutoresizingMaskIntoConstraints = false
+        humLabel.topAnchor.constraint(equalTo: tempLabel.bottomAnchor, constant: -20).isActive = true
+        humLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
     }
 }

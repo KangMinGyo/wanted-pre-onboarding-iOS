@@ -12,13 +12,12 @@ class WeatherViewController: UIViewController {
     let cityNameArr = ["gongju", "Gwangju", "Gumi", "Gunsan", "Daegu", "Daejeon", "Mokpo", "Busan", "Seosan", "Seoul", "Sokcho", "Suwon", "Suncheon", "Ulsan", "Iksan", "Jeonju", "Jeju", "Cheonan", "Cheongju", "Chuncheon"]
     let cityNameArr_Kr = ["공주", "광주", "구미", "군산", "대구", "대전", "목포", "부산", "서산", "서울", "속초", "수원", "순천", "울산", "익산", "전주", "제주", "천안", "청주", "춘천"]
     
-    var weatherData: [Weather] = []
-//    var weather: weather?
-    var main: [Main] = []
-//    var wind: Wind?
     var name: [String] = []
+    var icon: [String] = []
     var temp: [Float] = []
+    var hum: [Int] = []
 
+    
     private let weatherTableView: UITableView = {
         let tableView = UITableView()
         return tableView
@@ -41,7 +40,10 @@ class WeatherViewController: UIViewController {
                         case .success(let weatherResponse):
                             DispatchQueue.main.async {
                                 self.name.append(self.cityNameArr_Kr[index])
+                                self.icon.append(weatherResponse.weather[0].icon)
                                 self.temp.append(weatherResponse.main.temp)
+                                self.hum.append(weatherResponse.main.humidity)
+                            
                                 self.weatherTableView.reloadData()
 //                                self.weather = weatherResponse.weather.first
 //                                self.main = weatherResponse.main
@@ -67,6 +69,12 @@ class WeatherViewController: UIViewController {
         weatherTableView.dataSource = self
         weatherTableView.delegate = self
     }
+    
+    func setImage(imageURL: String) {
+        if let cacheImage = ImageCacheManager.shared.object(forKey: imageURL as NSString) {
+            
+        }
+    }
 }
 
 extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
@@ -79,7 +87,11 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! WeatherTableViewCell
         let temperature = temp[indexPath.row]
         cell.cityNameLabel.text = name[indexPath.row]
+        cell.weatherIcon.setImageUrl(icon[indexPath.row])
         cell.tempLabel.text = "\(Int(UnitTemperature.celsius.converter.value(fromBaseUnitValue: Double(temperature))))°C"
+//        cell.humLabel.text = "\(hum[indexPath.row])"
+        
+
         return cell
     }
     

@@ -14,10 +14,11 @@
 		8C4A7C6528BDF20000B1CF58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4A7C6328BDF20000B1CF58 /* LaunchScreen.storyboard */; };
 		8C4A7C7428BE384A00B1CF58 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A7C7328BE384A00B1CF58 /* WeatherViewController.swift */; };
 		8C4A7C7928BE3D6100B1CF58 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A7C7828BE3D6100B1CF58 /* WeatherTableViewCell.swift */; };
-		8C4A7C7C28BE412600B1CF58 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A7C7B28BE412600B1CF58 /* UIView.swift */; };
+		8C4A7C7C28BE412600B1CF58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A7C7B28BE412600B1CF58 /* Extensions.swift */; };
 		8C4A7C7F28BF403E00B1CF58 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A7C7E28BF403E00B1CF58 /* Weather.swift */; };
 		8C4A7C8228BF4B1E00B1CF58 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A7C8128BF4B1E00B1CF58 /* WeatherService.swift */; };
 		8C4A7C8428BF4EEF00B1CF58 /* KeyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C4A7C8328BF4EEF00B1CF58 /* KeyList.plist */; };
+		8C4A7C8628C0876100B1CF58 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A7C8528C0876100B1CF58 /* ImageCacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +31,11 @@
 		8C4A7C6628BDF20000B1CF58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C4A7C7328BE384A00B1CF58 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		8C4A7C7828BE3D6100B1CF58 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
-		8C4A7C7B28BE412600B1CF58 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		8C4A7C7B28BE412600B1CF58 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8C4A7C7E28BF403E00B1CF58 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		8C4A7C8128BF4B1E00B1CF58 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		8C4A7C8328BF4EEF00B1CF58 /* KeyList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = KeyList.plist; sourceTree = "<group>"; };
+		8C4A7C8528C0876100B1CF58 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				8C4A7C6328BDF20000B1CF58 /* LaunchScreen.storyboard */,
 				8C4A7C6628BDF20000B1CF58 /* Info.plist */,
 				8C4A7C8328BF4EEF00B1CF58 /* KeyList.plist */,
+				8C4A7C8528C0876100B1CF58 /* ImageCacheManager.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -101,7 +104,7 @@
 		8C4A7C7A28BE410800B1CF58 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8C4A7C7B28BE412600B1CF58 /* UIView.swift */,
+				8C4A7C7B28BE412600B1CF58 /* Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -194,10 +197,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C4A7C7C28BE412600B1CF58 /* UIView.swift in Sources */,
+				8C4A7C7C28BE412600B1CF58 /* Extensions.swift in Sources */,
 				8C4A7C7928BE3D6100B1CF58 /* WeatherTableViewCell.swift in Sources */,
 				8C4A7C5928BDF1FD00B1CF58 /* AppDelegate.swift in Sources */,
 				8C4A7C7428BE384A00B1CF58 /* WeatherViewController.swift in Sources */,
+				8C4A7C8628C0876100B1CF58 /* ImageCacheManager.swift in Sources */,
 				8C4A7C7F28BF403E00B1CF58 /* Weather.swift in Sources */,
 				8C4A7C5B28BDF1FD00B1CF58 /* SceneDelegate.swift in Sources */,
 				8C4A7C8228BF4B1E00B1CF58 /* WeatherService.swift in Sources */,
