@@ -32,13 +32,24 @@ class WeatherTableViewCell: UITableViewCell {
         return label
     }()
     
+    var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        return stackView
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         addSubview(cityNameLabel)
         addSubview(weatherIcon)
-        addSubview(tempLabel)
-        addSubview(humLabel)
+        addSubview(stackView)
+        
+        [tempLabel, humLabel].map {
+            self.stackView.addArrangedSubview($0)
+        }
+//        addSubview(tempLabel)
+//        addSubview(humLabel)
         
         configure()
     }
@@ -57,13 +68,17 @@ class WeatherTableViewCell: UITableViewCell {
         weatherIcon.leadingAnchor.constraint(equalTo: cityNameLabel.trailingAnchor, constant: 20).isActive = true
         weatherIcon.heightAnchor.constraint(equalToConstant: 60).isActive = true
         weatherIcon.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
 //
-        tempLabel.translatesAutoresizingMaskIntoConstraints = false
-        tempLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        tempLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
-//
-        humLabel.translatesAutoresizingMaskIntoConstraints = false
-        humLabel.topAnchor.constraint(equalTo: tempLabel.bottomAnchor, constant: -20).isActive = true
-        humLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
+//        tempLabel.translatesAutoresizingMaskIntoConstraints = false
+//        tempLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+//        tempLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
+////
+//        humLabel.translatesAutoresizingMaskIntoConstraints = false
+//        humLabel.topAnchor.constraint(equalTo: tempLabel.bottomAnchor, constant: -20).isActive = true
+//        humLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
     }
 }

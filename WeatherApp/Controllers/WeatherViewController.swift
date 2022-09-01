@@ -89,7 +89,7 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
         cell.cityNameLabel.text = name[indexPath.row]
         cell.weatherIcon.setImageUrl(icon[indexPath.row])
         cell.tempLabel.text = "\(Int(UnitTemperature.celsius.converter.value(fromBaseUnitValue: Double(temperature))))°C"
-//        cell.humLabel.text = "\(hum[indexPath.row])"
+        cell.humLabel.text = "습도 \(hum[indexPath.row])%"
         
 
         return cell
