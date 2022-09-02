@@ -90,9 +90,11 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
         cell.weatherIcon.setImageUrl(icon[indexPath.row])
         cell.tempLabel.text = "\(Int(UnitTemperature.celsius.converter.value(fromBaseUnitValue: Double(temperature))))°C"
         cell.humLabel.text = "습도 \(hum[indexPath.row])%"
-        
-
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let nextVC = WeatherDetailViewController()
+        self.show(nextVC, sender: self)
+    }
 }

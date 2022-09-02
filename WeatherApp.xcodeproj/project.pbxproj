@@ -19,6 +19,7 @@
 		8C4A7C8228BF4B1E00B1CF58 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A7C8128BF4B1E00B1CF58 /* WeatherService.swift */; };
 		8C4A7C8428BF4EEF00B1CF58 /* KeyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C4A7C8328BF4EEF00B1CF58 /* KeyList.plist */; };
 		8C4A7C8628C0876100B1CF58 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A7C8528C0876100B1CF58 /* ImageCacheManager.swift */; };
+		8C4A7C8828C0B16B00B1CF58 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4A7C8728C0B16B00B1CF58 /* WeatherDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		8C4A7C8128BF4B1E00B1CF58 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		8C4A7C8328BF4EEF00B1CF58 /* KeyList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = KeyList.plist; sourceTree = "<group>"; };
 		8C4A7C8528C0876100B1CF58 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		8C4A7C8728C0B16B00B1CF58 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				8C4A7C7328BE384A00B1CF58 /* WeatherViewController.swift */,
+				8C4A7C8728C0B16B00B1CF58 /* WeatherDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C4A7C8828C0B16B00B1CF58 /* WeatherDetailViewController.swift in Sources */,
 				8C4A7C7C28BE412600B1CF58 /* Extensions.swift in Sources */,
 				8C4A7C7928BE3D6100B1CF58 /* WeatherTableViewCell.swift in Sources */,
 				8C4A7C5928BDF1FD00B1CF58 /* AppDelegate.swift in Sources */,
