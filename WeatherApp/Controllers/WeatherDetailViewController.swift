@@ -26,7 +26,7 @@ class WeatherDetailViewController: UIViewController {
         return label
     }()
     
-    lazy var windChillLabel: UILabel = { //체감온도
+    lazy var windChillLabel: UILabel = { 
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 15)
         return label

@@ -73,7 +73,6 @@
 				8C4A7C8028BF4B0300B1CF58 /* Service */,
 				8C4A7C7D28BF402800B1CF58 /* Model */,
 				8C4A7C7A28BE410800B1CF58 /* Extensions */,
-				8C4A7C7728BE3D4E00B1CF58 /* Views */,
 				8C4A7C7228BE383100B1CF58 /* Controllers */,
 				8C4A7C5828BDF1FD00B1CF58 /* AppDelegate.swift */,
 				8C4A7C5A28BDF1FD00B1CF58 /* SceneDelegate.swift */,
@@ -82,7 +81,6 @@
 				8C4A7C6328BDF20000B1CF58 /* LaunchScreen.storyboard */,
 				8C4A7C6628BDF20000B1CF58 /* Info.plist */,
 				8C4A7C8328BF4EEF00B1CF58 /* KeyList.plist */,
-				8C4A7C8528C0876100B1CF58 /* ImageCacheManager.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -90,18 +88,19 @@
 		8C4A7C7228BE383100B1CF58 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8C4A7C7728BE3D4E00B1CF58 /* Cell */,
 				8C4A7C7328BE384A00B1CF58 /* WeatherViewController.swift */,
 				8C4A7C8728C0B16B00B1CF58 /* WeatherDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		8C4A7C7728BE3D4E00B1CF58 /* Views */ = {
+		8C4A7C7728BE3D4E00B1CF58 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				8C4A7C7828BE3D6100B1CF58 /* WeatherTableViewCell.swift */,
 			);
-			path = Views;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		8C4A7C7A28BE410800B1CF58 /* Extensions */ = {
@@ -123,6 +122,7 @@
 		8C4A7C8028BF4B0300B1CF58 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				8C4A7C8528C0876100B1CF58 /* ImageCacheManager.swift */,
 				8C4A7C8128BF4B1E00B1CF58 /* WeatherService.swift */,
 			);
 			path = Service;
