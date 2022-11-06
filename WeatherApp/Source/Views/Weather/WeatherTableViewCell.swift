@@ -9,7 +9,6 @@ import UIKit
 
 class WeatherTableViewCell: UITableViewCell {
     
-    //도시이름, 날씨 아이콘, 현재기온, 현재습도
     lazy var cityNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 25)
@@ -45,11 +44,9 @@ class WeatherTableViewCell: UITableViewCell {
         addSubview(weatherIcon)
         addSubview(stackView)
         
-        [tempLabel, humLabel].map {
+        [tempLabel, humLabel].forEach {
             self.stackView.addArrangedSubview($0)
         }
-//        addSubview(tempLabel)
-//        addSubview(humLabel)
         
         configure()
     }
